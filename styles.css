@@ -30,17 +30,17 @@ h1 {
 }
 
 .card {
-    /* position: relative; */
-    background-color: lightblue;
+    position: relative;
+    /* background-color: lightblue; */
     height: 175px;
     width: 125px;
 }
 
-.card.visble .card-back {
+.card.visible .card-back {
     transform: rotateY(-180deg);
 }
 
-.card.visble .card-front {
+.card.visible .card-front {
     transform: rotateY(0);
 }
 
@@ -55,7 +55,6 @@ h1 {
 
 img {
     width: 125px;
-    position: relative;
 }
 
 .card-back {
