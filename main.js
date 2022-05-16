@@ -484,22 +484,31 @@ function doubleCheck() {
     B = 0;
 } 
 
+finished();
+
+
 //////////////////////////////////////////////////////////////////
+//when all cards are gone:
 
-//Temeporary showing:
+function finished(){
+    let count = 0;
+    for (element of cards){
+        if (element.classList.contains("disappear")){
+            count++;
+        }
+    }
 
-// (function show(){
-//     for (element of cards){
-//         element.classList.add("flip");
-//     }
-// })()
+    if (count === 18){
+        alert(`Congratulations! You have finished the game!\nClick the "Shuffle Again" button to play again!`);
+    }
+}
 
 //////////////////////////////////////////////////////////////////
 
 //Shuffle cards:
 
 function changeText() {
-    button.innerText = "Shuffle Cards!";
+    button.innerText = "Shuffle Again!";
     button.style.backgroundColor = "rgb(255, 154, 171)";
     button.style.border = "rgb(255, 154, 171)";
 }
@@ -538,11 +547,6 @@ function reset(){
             element.classList.remove("flip", "match", "disappear");
         }
 
-        // element.classList.add("flip");
     }
 
-    // for (element of cards){
-    //     element.classList.add("flip");
-
-    // }
 }
