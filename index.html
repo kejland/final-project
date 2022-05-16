@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Memory Game</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
@@ -12,67 +16,190 @@
 <body>
     <div class="container">
         <h1 class="header">Memory Game!</h1>
+        <div id="press">
+            <button id="shuffle" class="btn btn-primary">Start Game!</button>
+        </div>
         <div class="game">
-            <div class="card visible" id="1">
-                <div class="card-back card-face">
-                    <img src="crowns/card.png">
+            <div class="play-card flip" id="card-1">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
                 </div>
-                <div class="card-front card-face">
-                    <img src="crowns/crown-1.png">
+                <div class="card-front">
+                    <img class="crown" id="image1">
 
                 </div>
             </div>
-            <div class="card" id="2">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-18">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image18">
+
+                </div>
             </div>
-            <div class="card" id="3">
-                <img class="card-back" src="crowns/card.png">
+            
+            <div class="play-card flip" id="card-2">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image2">
+
+                </div>
             </div>
-            <div class="card" id="4">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-17">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image17">
+
+                </div>
             </div>
-            <div class="card" id="5">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-3">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image3">
+
+                </div>
             </div>
-            <div class="card" id="6">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-16">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image16">
+
+                </div>
             </div>
-            <div class="card" id="7">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-4">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image4">
+
+                </div>
             </div>
-            <div class="card" id="8">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-15">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image15">
+
+                </div>
             </div>
-            <div class="card" id="9">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-5">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image5">
+
+                </div>
             </div>
-            <div class="card" id="10">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-14">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image14">
+
+                </div>
             </div>
-            <div class="card" id="11">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-6">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image6">
+
+                </div>
             </div>
-            <div class="card" id="12">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-13">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="crown" id="image13">
+
+                </div>
             </div>
-            <!-- <div class="card" id="13">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-7">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image7">
+
+                </div>
             </div>
-            <div class="card" id="14">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-12">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image12">
+
+                </div>
             </div>
-            <div class="card" id="15">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-8">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image8">
+
+                </div>
             </div>
-            <div class="card" id="16">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-11">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image11">
+
+                </div>
             </div>
-            <div class="card" id="17">
-                <img class="card-back" src="crowns/card.png">
+
+            <div class="play-card flip" id="card-9">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image9">
+
+                </div>
             </div>
-            <div class="card" id="18">
-                <img class="card-back" src="crowns/card.png">
-            </div> -->
+
+            <div class="play-card flip" id="card-10">
+                <div class="card-back">
+                    <img class="back" src="crowns/card.png">
+                </div>
+                <div class="card-front">
+                    <img class="crown" id="image10">
+
+                </div>
+            </div>
+
         </div>
     </div>
     
