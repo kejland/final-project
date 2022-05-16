@@ -19,3 +19,7 @@ For my final project, I buit a card memory game.
 2. Matching cards will dance and disappear
 3. Incorrect cards will automatically flip back
 4. Player can shuffle and randomise the card placements by clicking "Shuffle Again!"
+
+## Bonus!
+(forgot to add):
+* Cards get larger when hovered over
