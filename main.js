@@ -100,36 +100,23 @@ let button = document.querySelector("button");
 let cards = document.querySelectorAll(".game .play-card");
 
 shuffle.addEventListener("click", function(){
-    hasFlippedA = false;
-    hasFlippedB = false;
+    reset();
 
-    for (element of cards){
-        if (element.classList.contains("flip") === true || 
-            element.classList.contains("match") === true || 
-            element.classList.contains("disappear") === true){
-                element.classList.remove("flip");
-                element.classList.remove("match");
-                element.classList.remove("disappear");
-        }
-    }
+    shuffleCards();
 
-   setTimeout(shuffleCards, 500);
+    setTimeout(openCards, 900);
+    
+    setTimeout(changeText, 900);
 
-    function shuffleCards() {
-        button.innerText = "Shuffle Cards!";
-        button.style.backgroundColor = "rgb(255, 154, 171)";
-        button.style.border = "rgb(255, 154, 171)";
-    }
+    setTimeout(closeCards, 5000);
+    
 
 })
 
 
+
 //////////////////////////////////////////////////////////////////
 //Card Event Listener:
-
-//Cards do not match:
-
-
 
 card1.addEventListener("click", function(){
     if (card1.classList[1] !== "flip"){
@@ -497,17 +484,65 @@ function doubleCheck() {
     B = 0;
 } 
 
+//////////////////////////////////////////////////////////////////
 
-    // if (hasFlippedA === false && hasFlippedB === false){
-    //     for (element of cards){
-    //         if (element.classList[1] === "flip"){
-    //             element.classList.remove("flip");
-    //         }
-    //     }
-    // }
+//Temeporary showing:
 
-
+// (function show(){
+//     for (element of cards){
+//         element.classList.add("flip");
+//     }
+// })()
 
 //////////////////////////////////////////////////////////////////
-//Matching cards:
 
+//Shuffle cards:
+
+function changeText() {
+    button.innerText = "Shuffle Cards!";
+    button.style.backgroundColor = "rgb(255, 154, 171)";
+    button.style.border = "rgb(255, 154, 171)";
+}
+
+function shuffleCards(){
+    for (element of cards){
+        let random = Math.ceil(Math.random()*18);
+
+        element.style.order = random;
+    }
+
+}
+
+
+function openCards(){
+    for (element of cards){
+        element.classList.add("flip");
+    } 
+}
+
+function closeCards(){
+    for (element of cards){
+        element.classList.remove("flip");
+    }
+}
+
+function reset(){
+    hasFlippedA = false;
+    hasFlippedB = false;
+
+    for (element of cards){
+        if (element.classList.contains("flip") === true ||
+            element.classList.contains("match") === true || 
+            element.classList.contains("disappear") === true){
+                
+            element.classList.remove("flip", "match", "disappear");
+        }
+
+        // element.classList.add("flip");
+    }
+
+    // for (element of cards){
+    //     element.classList.add("flip");
+
+    // }
+}
